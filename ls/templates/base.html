@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+
+       
+
+        .nav_back{
+           
+            color: black;
+            border-bottom: 2px solid white;
+            font-family: Dekar;
+            font-size: 20px;
+            width:inherit;
+        }
+        .nav_back:hover{
+            
+            color: white;
+            background-color: black;
+            
+           
+        }
+        body{
+           
+            background: url("{% static 'images/blogback1.png' %}");
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-attachment: fixed;
+            background-position: center;
+            
+            
+        }
+        .list-group-item{
+            background-color:rgba(0,0,0,0.3);
+            color: white;
+            width: 200px;
+           margin-left: 800px;
+          
+
+        }
+        .list-group-item:hover{
+           background-color: rgba(255,255,255,0.8);
+           color: black;
+
+        }
+        #navbar_back{
+            background-color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg  static-top" id="navbar_back">
+        <a class="navbar-brand" href="#" style="font-family: TR2N; font-size:50px;color:white; background:black; border:1px solid black;width:70px;height:100px;">
+            
+           
+          <center>  P
+            <p style="margin-left:10px;margin-top:-60px;">
+              S
+            </p></center>
+            </a>
+       
+        <a class="navbar-brand" href="#" style="font-family: Dekar; font-size:50px;color:black;">
+            
+           
+            Parallax Space</a>
+       
+      
+        
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active " >
+              <a class="nav_back btn " href="{% url 'ls:home' %}">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item   ">
+              <a class="nav_back  btn" href="{% url 'ls:news' %}" onClick = 'dropBlog()'>WORLD NEWS</a>
+             
+              
+            
+
+
+            </li>
+           
+            <li class="nav-item ">
+              <a class="nav_back btn" href="#contactInfo">ABOUT</a>
+            </li>
+          
+        
+        
+         
+              <li class="nav-item active " >
+                <a class="nav_back btn " href="{% url 'ls:technology' %}">Technology <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item   ">
+                <a class="nav_back  btn" href="{% url 'ls:entertainment' %}" onClick = 'dropBlog()'>Entertainment</a>
+              </li>
+             
+              <li class="nav-item  ">
+                <a class="nav_back btn" href="{% url 'ls:astroblog' %}">BLOG</a>
+              </li>
+
+           
+              
+            </ul>
+            
+     
+
+          
+        
+      </nav>
+    
+    
+    
+    
+
+      
+    {% block body_block %}
+
+    
+    
+
+    {% endblock %}
+    <div id="contactInfo" >
+
+
+        <div class="container" style=" padding-bottom:80px;">
+    
+           <center>
+            <table style="color: white;">
+                <thead >
+                  
+                    <tr>
+                        
+                            <th style="width: 200px; padding-top:50px;">SERVICE</th>
+                            <th style="width: 200px; padding-top:50px;">SOCIAL MEDIA</th>
+                            <th style="width: 200px; padding-top:50px;">DEVELOPMENT</th>
+                       
+                        
+                    </tr>
+               
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>News</td>
+                        <td>Facebook</td>
+                        <td>VAMSI CHERUKURU</td>
+    
+                    </tr>
+                    <tr>
+                        <td>Technology</td>
+                        <td>Instagram</td>
+                        <td >
+                           
+    <b> CONTACT INFO</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Movie Updates</td>
+                        <td></td>
+                        <td>parallax.space@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Blogs</td>
+                    </tr>
+                </tbody>
+            </table>
+           </center>
+        </div>
+    
+            
+    
+       
+    
+    
+    </div>
+</body>
+</html>

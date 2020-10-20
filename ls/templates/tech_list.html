@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+
+    {% block body_block %}
+
+<style>
+  h3:hover{
+    text-decoration: underline;
+  }
+  body{
+    background: url("{% static 'images/blogback1.png' %}");
+
+  }
+</style>
+
+    <div class="container">
+     
+      
+<h1 style="color: whitesmoke;"> <br><br> <br><br> <br> Tech Blog</h1>
+
+{% if user.is_authenticated %}
+
+
+<a type="button" href="{% url 'ls:techPost' %}" class="btn btn-dark">create a Post</a>
+
+{% endif %}
+
+
+
+<br>
+
+
+
+    <div style="background: white;">
+
+        {% for post in post_list %}
+
+       
+        <div class="container" style="padding: 30px;">
+            <a href="{% url 'ls:tech_detail' pk=post.pk %}"><h3 style="color: black;">
+                {{post.Title}}
+              </h3></a>
+              <br>
+              Published on:
+              {{post.post_date}}
+            
+             
+              <img src="{{post.photo.url}}" alt="" width="300px;">
+              <hr>
+        </div>
+        
+        {% endfor %}
+    </div>
+      
+    
+ 
+
+
+
+
+
+{% endblock %}
+
+
+
+
+

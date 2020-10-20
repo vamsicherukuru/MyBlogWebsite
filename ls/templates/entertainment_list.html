@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+
+    {% block body_block %}
+
+<style>
+  h3:hover{
+    text-decoration: underline;
+  }
+  body{
+    background-image :url("https://www.zer021.co.za/wp-content/uploads/2016/07/21c29ad09a06171b168e2260a27b11a4.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+    
+
+  }
+</style>
+
+    <div class="container">
+     
+      
+<h1 style="color: whitesmoke;">  Astro Blog</h1>
+
+{% if user.is_authenticated %}
+
+
+<a type="button" href="{% url 'ls:entertainmentPost' %}" class="btn btn-dark">create a Post</a>
+
+{% endif %}
+
+
+
+<br>
+
+
+<table class="table table-light">
+    <thead>
+      <tr >
+       
+       
+
+        
+      </tr>
+    </thead>
+    <tbody>
+        {% for post in post_list %}
+
+       
+      <tr>
+       
+       
+        
+        <td><a href="{% url 'ls:entertainment_detail' pk=post.pk %}"><h3 style="color: black;">
+          {{post.Title}}
+        </h3></a>
+        <br>
+        Published on:
+        {{post.post_date}}
+        </td>
+        <td><img src="{{post.photo.url}}" alt="" width="300px;"></td>
+      </tr>
+      
+      {% endfor %}
+    
+    </tbody>
+  </table>
+
+
+
+
+
+</div>
+{% endblock %}
+
+
+
+
+
